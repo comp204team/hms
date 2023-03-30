@@ -36,4 +36,7 @@ public class Patient {
     @Column(name = "email")
     private String email;
 
+    //TODO: doctor
+
+    //TODO: raporlar
 }

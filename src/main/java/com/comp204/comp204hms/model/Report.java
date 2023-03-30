@@ -38,4 +38,8 @@ public class Report {
 
     @Column(name = "photo_url")
     private String photoUrl;
+
+    //TODO: doctor
+
+    //TODO: patient
 }

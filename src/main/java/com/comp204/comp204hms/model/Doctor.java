@@ -20,6 +20,9 @@ public class Doctor {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "tckn")
+    private Long tckn;
+
     @Column(name = "name")
     private String name;
 
@@ -27,5 +30,9 @@ public class Doctor {
     private String surname;
 
 
-    //Department relationship
+    //TODO: Department relationship
+
+    //TODO: raporlar
+
+    //TODO: hastalar
 }

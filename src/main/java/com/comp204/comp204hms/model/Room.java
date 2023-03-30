@@ -24,10 +24,8 @@ public class Room {
     @Column(name = "room_number")
     private String roomNumber;
 
-    @Column(name = "is_available")
-    private Boolean isAvailable;
 
-    //roomtype maybe
+    //TODO: Patient relationship
 
-    //Doctor relationship maybe
+    //TODO: roomtype maybe
 }

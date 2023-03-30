@@ -25,5 +25,5 @@ public class Department {
     @Column(name = "description")
     private String description;
 
-    //Doctors relationship
+    //TODO: Doctors relationship
 }
