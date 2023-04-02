@@ -39,7 +39,11 @@ public class Report {
     @Column(name = "photo_url")
     private String photoUrl;
 
-    //TODO: doctor
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 
-    //TODO: patient
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
 }

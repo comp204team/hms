@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -29,10 +31,13 @@ public class Doctor {
     @Column(name = "surname")
     private String surname;
 
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
-    //TODO: Department relationship
+    @OneToMany(mappedBy = "doctor")
+    private List<Report> reports;
 
-    //TODO: raporlar
-
-    //TODO: hastalar
+    @OneToMany(mappedBy = "doctor")
+    private List<Patient> patients;
 }

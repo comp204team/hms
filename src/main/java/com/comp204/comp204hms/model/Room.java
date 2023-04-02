@@ -24,8 +24,8 @@ public class Room {
     @Column(name = "room_number")
     private String roomNumber;
 
-
-    //TODO: Patient relationship
+    @OneToOne(mappedBy = "room")
+    private Patient patient;
 
     //TODO: roomtype maybe
 }

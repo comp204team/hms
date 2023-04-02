@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -36,7 +38,14 @@ public class Patient {
     @Column(name = "email")
     private String email;
 
-    //TODO: doctor
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 
-    //TODO: raporlar
+    @OneToMany(mappedBy = "patient")
+    private List<Report> reports;
+
+    @OneToOne
+    @JoinColumn(name = "room_id", referencedColumnName = "id")
+    private Room room;
 }
