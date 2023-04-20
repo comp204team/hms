@@ -8,4 +8,7 @@ public class ApiPaths {
         public static final String CTRL = BASE_PATH + "/departments";
     }
 
+    public static final class RoomCtrl{
+        public static final String CTRL = BASE_PATH + "/rooms";
+    }
 }
