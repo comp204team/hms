@@ -11,4 +11,8 @@ public class ApiPaths {
     public static final class RoomCtrl{
         public static final String CTRL = BASE_PATH + "/rooms";
     }
+
+    public static final class DoctorCtrl{
+        public static final String CTRL = BASE_PATH + "/doctors";
+    }
 }

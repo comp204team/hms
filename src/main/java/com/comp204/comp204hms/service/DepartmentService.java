@@ -30,7 +30,13 @@ public class DepartmentService {
     }
 
     public List<DepartmentDto> getAll(){
-        return departmentRepository.findAll().stream().map(DepartmentMapper.INSTANCE::departmentToDepartmentDto).collect(Collectors.toList());
+        return departmentRepository.findAll().stream().map(DepartmentMapper.INSTANCE::departmentToDepartmentDto)
+                .collect(Collectors.toList());
+    }
+
+    public DepartmentDto getById(Long id){
+        Department department = getDepartmentByIdOrThrowNotFoundError(id);
+        return DepartmentMapper.INSTANCE.departmentToDepartmentDto(department);
     }
 
     public void update(Long id, DepartmentRequestDto departmentRequestDto){
@@ -53,8 +59,12 @@ public class DepartmentService {
     }
 
 
-    private Department getDepartmentByIdOrThrowNotFoundError(Long id){
+    protected Department getDepartmentByIdOrThrowNotFoundError(Long id){
         return departmentRepository.findById(id).orElseThrow(() -> new NotFoundException("Department",
                 "No department found with this id"));
+    }
+
+    protected Department getDepartmentByIdOrReturnNull(Long id){
+        return departmentRepository.findById(id).orElse(null);
     }
 }
