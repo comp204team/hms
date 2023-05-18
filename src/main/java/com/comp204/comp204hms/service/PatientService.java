@@ -32,8 +32,12 @@ public class PatientService {
 
     public PatientDto create(PatientRequestDto patientRequestDto){
         Patient patient = PatientMapper.INSTANCE.toEntity(patientRequestDto);
-        patient.setDoctor(doctorRepository.findById(patientRequestDto.getDoctorId()).orElse(null));
-        patient.setRoom(roomRepository.findById(patientRequestDto.getRoomId()).orElse(null));
+        if(patientRequestDto.getDoctorId() != null){
+            patient.setDoctor(doctorRepository.findById(patientRequestDto.getDoctorId()).orElse(null));
+        }
+        if(patientRequestDto.getRoomId() != null){
+            patient.setRoom(roomRepository.findById(patientRequestDto.getRoomId()).orElse(null));
+        }
 
         return PatientMapper.INSTANCE.toDto(patientRepository.save(patient));
 

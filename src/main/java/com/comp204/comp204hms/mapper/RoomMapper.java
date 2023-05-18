@@ -14,11 +14,7 @@ public interface RoomMapper {
 
     RoomMapper INSTANCE = Mappers.getMapper(RoomMapper.class);
 
-    Room roomDtoToRoom(RoomDto roomDto);
-
     RoomDto roomToRoomDto(Room room);
-    @Mapping(target = "room",source = "room",ignore = true)
-    PatientDto patientToPatientDto(Patient patient);
 
     Room roomRequestDtoToRoom(RoomRequestDto roomRequestDto);
 }

@@ -28,8 +28,10 @@ public class DoctorService {
 
     public DoctorDto create(DoctorRequestDto doctorRequestDto){
         Doctor doctor = DoctorMapper.INSTANCE.toEntity(doctorRequestDto);
-        Department department = departmentService.getDepartmentByIdOrReturnNull(doctorRequestDto.getDepartmentId());
-        doctor.setDepartment(department);
+        if(doctorRequestDto.getDepartmentId() != null){
+            Department department = departmentService.getDepartmentByIdOrReturnNull(doctorRequestDto.getDepartmentId());
+            doctor.setDepartment(department);
+        }
 
         return DoctorMapper.INSTANCE.toDto(doctorRepository.save(doctor));
     }
