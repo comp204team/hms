@@ -9,8 +9,8 @@ class DoctorService {
 
     }
 
-    createDoctor(laborant){
-        return axios.post(DOCTOR_API_BASE_URL, laborant);
+    createDoctor(doctor){
+        return axios.post(DOCTOR_API_BASE_URL, doctor);
     }
 
 }
