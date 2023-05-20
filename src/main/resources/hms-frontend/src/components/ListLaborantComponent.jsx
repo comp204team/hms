@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LaborantService from '../services/LaborantService'
+import LaborantService from '../services/DoctorService'
 
 
 class ListLaborantComponent extends Component {

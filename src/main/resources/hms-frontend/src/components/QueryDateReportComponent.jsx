@@ -12,8 +12,8 @@ import ReportService from '../services/ReportService'
         this.addReport = this.addReport.bind(this);
         this.editReport = this.editReport.bind(this);
         this.deleteReport = this.deleteReport.bind(this);
-        this.addLaborant = this.addLaborant.bind(this);
-        this.getLaborants = this.getLaborants.bind(this);
+        this.addDoctor = this.addDoctor.bind(this);
+        this.getDoctors = this.getDoctors.bind(this);
         this.findInApi = this.findInApi.bind(this);
         this.mainScreen = this.mainScreen.bind(this);
 
@@ -35,12 +35,12 @@ import ReportService from '../services/ReportService'
         this.props.history.push('/add-report');
     }
 
-    addLaborant(){
-        this.props.history.push('/add-laborant')
+    addDoctor(){
+        this.props.history.push('/add-doctor')
     }
 
-    getLaborants(){
-        this.props.history.push('/laborants')
+    getDoctors(){
+        this.props.history.push('/doctors')
     }
 
     queryDateMain(){
@@ -82,9 +82,9 @@ import ReportService from '../services/ReportService'
                      <div className = "row" style={{textAlign:"center" }} >
                         <button className="btn btn-secondary" onClick={this.mainScreen}> Main</button>
                         <button className="btn btn-primary" onClick={this.addReport}> Add Report</button>
-                        <button className="btn btn-primary" onClick={this.addLaborant}> Add Laborant</button>
+                        <button className="btn btn-primary" onClick={this.addDoctor}> Add Doctor</button>
                         <div></div>
-                        <button className="btn btn-primary " onClick={this.getLaborants}> Gets Laborant</button>
+                        <button className="btn btn-primary " onClick={this.getDoctors}> Gets Doctor</button>
                         <button className="btn btn-primary" onClick={this.queryDateMain}> List By Date</button>
          
     
@@ -104,7 +104,7 @@ import ReportService from '../services/ReportService'
                         <th>National Id</th>
                         <th>Disease</th>
                         <th>Date</th>
-                        <th>Laborant</th>
+                        <th>Doctor</th>
                         <th style={{width:"250px"}}>Action</th>
     
                         </tr>

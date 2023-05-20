@@ -14,7 +14,7 @@ class HeaderComponent extends Component {
             <div>
                 <header>
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href="https://javaguides.net" className="navbar-brand" style={{textAlign:'center'}}>Ozgur Yazilim Report System</a></div>
+                    <div><a  className="navbar-brand" style={{textAlign:'center'}}>Agu - Hospital Management System</a></div>
                     </nav>
                 </header>
             </div>

@@ -26,7 +26,7 @@ class UpdateReportComponent extends Component {
         this.changeDiseaseHandler = this.changeDiseaseHandler.bind(this);
         this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this)
         this.changeDateHandler = this.changeDateHandler.bind(this);
-        this.changeLaborantIdHandler = this.changeLaborantIdHandler.bind(this);
+        this.changeDoctorIdHandler = this.changeDoctorIdHandler.bind(this);
         this.changePhotoUrlHandler = this.changePhotoUrlHandler.bind(this);
         this.updateReport = this.updateReport.bind(this);
     }
@@ -93,7 +93,7 @@ class UpdateReportComponent extends Component {
     changeDateHandler= (event) => {
         this.setState({createdDate: event.target.value});
     }
-    changeLaborantIdHandler= (event) => {
+    changeDoctorIdHandler= (event) => {
         this.setState({laborantId: event.target.value});
     }
     changePhotoUrlHandler= (event) => {

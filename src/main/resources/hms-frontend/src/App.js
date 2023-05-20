@@ -7,7 +7,7 @@ import FooterComponent from './components/FooterComponent';
 import CreateReportComponents from './components/CreateReportComponent';
 import UpdateReportComponent from './components/UpdateReportComponent';
 import ViewReportComponent from './components/ViewReportComplement';
-import CreateLaborantComponent from './components/CreateLaborantComponent';
+import CreateLaborantComponent from './components/CreateDoctorComponent';
 import ListLaborantComponent from './components/ListLaborantComponent';
 import QueryDateReportComponent from './components/QueryDateReportComponent';
 function App() {

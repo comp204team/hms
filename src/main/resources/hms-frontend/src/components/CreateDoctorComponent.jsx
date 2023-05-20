@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import LaborantService from '../services/LaborantService';
+import DoctorService from '../services/DoctorService';
 
-class CreateLaborantComponent extends Component {
+class CreateDoctorComponent extends Component {
     constructor(props) {
         super(props)
 
@@ -15,18 +15,18 @@ class CreateLaborantComponent extends Component {
         this.changeNameHandler = this.changeNameHandler.bind(this);
         this.changeSurnameHandler = this.changeSurnameHandler.bind(this);
         this.changeHospitalNumberHandler = this.changeHospitalNumberHandler.bind(this);
-        this.saveLaborant = this.saveLaborant.bind(this);
+        this.saveDoctor = this.saveDoctor.bind(this);
     }
 
  
-    saveLaborant = (e) => {
+    saveDoctor = (e) => {
         e.preventDefault();
-        let laborant = {
+        let doctor = {
             name: this.state.name, 
             surname: this.state.surname, 
             hospitalNumber: this.state.hospitalNumber};
-            console.log('laborant => ' + JSON.stringify(laborant));
-            LaborantService.createLaborant(laborant).then(res =>{
+            console.log('doctor => ' + JSON.stringify(doctor));
+        DoctorService.createDoctor(doctor).then(res =>{
                 this.props.history.push('');
             });
         } 
@@ -49,7 +49,7 @@ class CreateLaborantComponent extends Component {
     }
 
     getTitle(){
-            return <h3 className="text-center">Add Laborant</h3>
+            return <h3 className="text-center">Add Doctor</h3>
     }
     render() {
         return (
@@ -78,7 +78,7 @@ class CreateLaborantComponent extends Component {
                                             <input placeholder="Hospital No:" name="emailId" className="form-control" 
                                                 value={this.state.hospitalNumber} onChange={this.changeHospitalNumberHandler}/>
                                         </div>
-                                        <button className="btn btn-success" onClick={this.saveLaborant} style={{marginLeft: "10px"}} >Save</button>
+                                        <button className="btn btn-success" onClick={this.saveDoctor} style={{marginLeft: "10px"}} >Save</button>
                                         <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                     </form>
                                 </div>
@@ -90,4 +90,4 @@ class CreateLaborantComponent extends Component {
         )
     }
 }
-export default CreateLaborantComponent
+export default CreateDoctorComponent

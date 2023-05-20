@@ -14,8 +14,6 @@ public class ReportDto {
     private String disease;
     private String description;
     private String photoUrl;
-
     private DoctorDto doctor;
-
     private PatientDto patient;
 }
