@@ -14,5 +14,6 @@ public interface DoctorMapper {
 
     DoctorDto toDto(Doctor doctor);
 
+    @Mapping(target = "department", ignore = true)
     Doctor toEntity(DoctorRequestDto doctorRequestDto);
 }

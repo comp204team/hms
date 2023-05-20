@@ -26,15 +26,15 @@ public class Report {
 //    @Column(name = "fileno", unique = true)
 //    private Long fileNo;
 
-    @Column(name = "disase")
-    private String disase;
+    @Column(name = "disease")
+    private String disease;
 
     @Column(name = "description")
     private String description;
 
     @Column(name = "created_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date createdDate;
+    private Date createdDate = new Date();
 
     @Column(name = "photo_url")
     private String photoUrl;
