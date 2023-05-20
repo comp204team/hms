@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(ApiPaths.ReportCtrl.CTRL)
@@ -28,7 +29,14 @@ public class ReportController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ReportDto>> getAll(){
+    public ResponseEntity<List<ReportDto>> getAll(@RequestParam Optional<Long> patientId, @RequestParam Optional<Long> doctorId){
+        if(patientId.isPresent()){
+            return new ResponseEntity<>(reportService.getByPatientId(patientId.get()), HttpStatus.OK);
+        }
+        if (doctorId.isPresent()){
+            return new ResponseEntity<>(reportService.getByDoctorId(doctorId.get()), HttpStatus.OK);
+        }
+
         return new ResponseEntity<>(reportService.getAll(), HttpStatus.OK);
     }
 
