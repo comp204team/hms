@@ -144,12 +144,9 @@ class ListReportComponent extends Component {
                         <tr>
                             <th>ID</th>
 
-                            <th>File No</th>
-                            <th>Paitent Name</th>
-                            <th>Paitent Surname</th>
-                            <th>National Id</th>
+                            <th>Patient Id</th>
                             <th>Disease</th>
-                            <th>Date</th>
+                            <th>Description</th>
                             <th>Doctor</th>
                             <th style={{width: "250px"}}>Action</th>
 
@@ -163,13 +160,11 @@ class ListReportComponent extends Component {
                                     <tr key={report.id}>
                                         <td>{report.id}</td>
 
-                                        <td>{report.fileNo}</td>
-                                        <td>{report.name}</td>
-                                        <td>{report.surname}</td>
-                                        <td>{report.nationalID}</td>
+                                        <td>{report.patientId}</td>
                                         <td>{report.disease}</td>
-                                        <td>{report.createdDate}</td>
-                                        <th>{report.adminFirstName + " " + report.adminLastName}</th>
+                                        <td>{report.description}</td>
+                                        <td>{report.doctorId}</td>
+
                                         <td>
                                             <button style={{marginLeft: "5px"}}
                                                     onClick={() => this.editReport(report.id)}
