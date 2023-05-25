@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
-import LaborantService from '../services/DoctorService'
+import DoctorService from '../services/DoctorService'
 
 
-class ListLaborantComponent extends Component {
+class ListDoctorComponent extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-                laborants: []
+                doctors: []
         }
     }
 
  
 
     componentDidMount(){
-        LaborantService.getAllLaborants().then((res) => {
-            this.setState({ laborants: res.data});
+        DoctorService.getAllDoctors().then((res) => {
+            this.setState({ doctors: res.data});
         });
     }
 
@@ -26,30 +26,28 @@ class ListLaborantComponent extends Component {
     render() {
         return (
             <div>
-                 <h2 className="text-center">Laborant List</h2>
+                 <h2 className="text-center">Doctor List</h2>
                  <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Back</button>
                  <br></br>
                  <div className = "row">
                         <table className = "table table-striped table-bordered">
-
                             <thead>
                                 <tr>
                                     <th> Id</th>
-                                    <th> Laborant First Name</th>
-                                    <th> Laborant Last Name</th>
-                                    <th> Laborant Hospital Id</th>
-                                    
+                                    <th> Doctor First Name</th>
+                                    <th> Doctor Last Name</th>
+                                    <th> Doctor Department Id</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
-                                    this.state.laborants.map(
-                                        laborant => 
-                                        <tr key = {laborant.id}>
-                                            <td>  {laborant.id}</td>
-                                             <td> {laborant.name} </td>   
-                                             <td> {laborant.surname}</td>
-                                             <td> {laborant.hospitalNumber}</td>
+                                    this.state.doctors.map(
+                                        doctor =>
+                                        <tr key = {doctor.id}>
+                                            <td>  {doctor.id}</td>
+                                             <td> {doctor.name} </td>
+                                             <td> {doctor.surname}</td>
+                                             <td> {doctor.departmentId}</td>
                                         </tr>
                                     )
                                 }
@@ -63,4 +61,4 @@ class ListLaborantComponent extends Component {
     }
 }
 
-export default ListLaborantComponent
+export default ListDoctorComponent

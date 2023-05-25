@@ -1,17 +1,21 @@
 import axios from 'axios'
 
-const PATIENT_API_BASE_URL = "http://localhost:8080/api/doctors";
+const PATIENT_API_BASE_URL = "http://localhost:8080/api/patients";
 
 class PatientService {
 
-    getAllDoctors(){
+    getAllPatients(){
         return axios.get(PATIENT_API_BASE_URL);
 
     }
 
-    createDoctor(laborant){
-        return axios.post(PATIENT_API_BASE_URL, laborant);
+    createPatient(patient){
+        return axios.post(PATIENT_API_BASE_URL, patient);
     }
+    updatePatient(patient, patientId){
+        return axios.put(PATIENT_API_BASE_URL + '/' + patientId, patient);
+    }
+
 
 }
 export default new PatientService();

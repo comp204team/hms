@@ -8,13 +8,13 @@ class CreateDoctorComponent extends Component {
         this.state = {
  
             id: this.props.match.params.id,
-            firstName: '',
-            lastName: '',
-            hospitalNumber: ''
+            name: '',
+            surname: '',
+            departmentId: ''
         }
         this.changeNameHandler = this.changeNameHandler.bind(this);
         this.changeSurnameHandler = this.changeSurnameHandler.bind(this);
-        this.changeHospitalNumberHandler = this.changeHospitalNumberHandler.bind(this);
+        this.changeDepartmentIdHandler = this.changeDepartmentIdHandler.bind(this);
         this.saveDoctor = this.saveDoctor.bind(this);
     }
 
@@ -24,9 +24,9 @@ class CreateDoctorComponent extends Component {
         let doctor = {
             name: this.state.name, 
             surname: this.state.surname, 
-            hospitalNumber: this.state.hospitalNumber};
+            departmentId: this.state.departmentId};
             console.log('doctor => ' + JSON.stringify(doctor));
-        DoctorService.createDoctor(doctor).then(res =>{
+            DoctorService.createDoctor(doctor).then(res =>{
                 this.props.history.push('');
             });
         } 
@@ -40,8 +40,8 @@ class CreateDoctorComponent extends Component {
         this.setState({surname: event.target.value});
     }
 
-    changeHospitalNumberHandler= (event) => {
-        this.setState({hospitalNumber: event.target.value});
+    changeDepartmentIdHandler= (event) => {
+        this.setState({departmentId: event.target.value});
     }
 
     cancel(){
@@ -76,7 +76,7 @@ class CreateDoctorComponent extends Component {
                                         <div className = "form-group">
                                             <label> Hospital No: </label>
                                             <input placeholder="Hospital No:" name="emailId" className="form-control" 
-                                                value={this.state.hospitalNumber} onChange={this.changeHospitalNumberHandler}/>
+                                                value={this.state.departmentId} onChange={this.changeDepartmentIdHandler}/>
                                         </div>
                                         <button className="btn btn-success" onClick={this.saveDoctor} style={{marginLeft: "10px"}} >Save</button>
                                         <button className="btn btn-danger"  onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>

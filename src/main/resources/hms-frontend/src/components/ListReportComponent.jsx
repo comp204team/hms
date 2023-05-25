@@ -51,7 +51,7 @@ class ListReportComponent extends Component {
         this.props.history.push('')
 
     }
-
+    //TODO TARIH YA DA X BIR SEYE GORE SIRALAMA ILE ILGILI YAPILACAKSA
     queryDateMain() {
         this.props.history.push('/queryDate')
     }
@@ -70,7 +70,7 @@ class ListReportComponent extends Component {
             this.setState({reports: res.data});
         })
     }
-
+    //TODO FILTRELEME
     findInApi(value) {
         // this.props.history.push(`/searchResult/${value}`)
         ReportService.searchInApi(value).then((res) => {

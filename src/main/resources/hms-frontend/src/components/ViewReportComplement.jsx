@@ -35,21 +35,10 @@ class ViewReportComponent extends Component {
                     <h3 className="text-center"> View Report Details</h3>
                     <button className="btn btn-danger" onClick={this.cancel}>Back</button>
                     <div className="card-body">
-                        <div className="row">
-                            <label> File No : </label>
-                            <div> {this.state.report.fileNo}</div>
-                        </div>
-                        <div className="row">
-                            <label> Paitent Name: </label>
-                            <div> {this.state.report.name}</div>
-                        </div>
-                        <div className="row">
-                            <label> Paitent Surname : </label>
-                            <div> {this.state.report.surname}</div>
-                        </div>
+
                         <div className="row">
                             <label> National ID: </label>
-                            <div> {this.state.report.nationalID}</div>
+                            <div> {this.state.report.patientId}</div>
                         </div>
                         <div className="row">
                             <label> Disease : </label>
@@ -60,21 +49,10 @@ class ViewReportComponent extends Component {
                             <div> {this.state.report.description}</div>
                         </div>
                         <div className="row">
-                            <label> Create Date : </label>
-                            <div> {this.state.report.createdDate}</div>
+                            <label> Doctor Id : </label>
+                            <div> {this.state.report.doctorId}</div>
                         </div>
-                        <div className="row">
-                            <label> Laborant Id:</label>
-                            <div> {this.state.report.laborantId}</div>
-                        </div>
-                        <div className="row">
-                            <label> Laborant Name : </label>
-                            <div> {this.state.report.adminFirstName}</div>
-                        </div>
-                        <div className="row">
-                            <label> Laborant Surname</label>
-                            <div> {this.state.report.adminLastName}</div>
-                        </div>
+
                         <img src={this.state.report.photoUrl} alt="" style={{width: "500px"}}/>
                     </div>
 

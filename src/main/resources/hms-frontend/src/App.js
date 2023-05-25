@@ -8,7 +8,7 @@ import CreateReportComponents from './components/CreateReportComponent';
 import UpdateReportComponent from './components/UpdateReportComponent';
 import ViewReportComponent from './components/ViewReportComplement';
 import CreateLaborantComponent from './components/CreateDoctorComponent';
-import ListLaborantComponent from './components/ListLaborantComponent';
+import ListDoctorComponent from './components/ListDoctorComponent';
 import QueryDateReportComponent from './components/QueryDateReportComponent';
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
                           <Route path = "/update-report/:id" exact component = {UpdateReportComponent}></Route>
                           <Route path = "/view-report/:id" component = {ViewReportComponent}></Route>
                           <Route path = "/add-laborant" component = {CreateLaborantComponent}></Route>
-                          <Route path = "/laborants" component = {ListLaborantComponent}></Route>
+                          <Route path = "/laborants" component = {ListDoctorComponent}></Route>
                           <Route path = "/queryDate" exact component = {QueryDateReportComponent}></Route>
 
                     </Switch>

@@ -23,13 +23,10 @@ class ReportService {
     deleteReport(reportId){
         return axios.delete(REPORT_API_BASE_URL + '/' + reportId);
     }
-
+    // TODO ARAMAYI APIDEN MI GELEN VERININ TAMAMINDAN MI
     searchInApi(value){
         return axios.get(REPORT_API_BASE_URL+`/search/${value}`)
     }
 
-    queryDate(){
-        return axios.get(REPORT_API_BASE_URL+'/queryDate')
-    }
 }
 export default new ReportService();
