@@ -11,8 +11,10 @@ class ListReportComponent extends Component {
         }
         this.addReport = this.addReport.bind(this);
         this.editReport = this.editReport.bind(this);
+        this.editPatient = this.editPatient.bind(this);
         this.deleteReport = this.deleteReport.bind(this);
         this.addDoctor = this.addDoctor.bind(this);
+        this.addPatient = this.addPatient.bind(this);
         this.getDoctors = this.getDoctors.bind(this);
         this.findInApi = this.findInApi.bind(this);
         this.queryDateMain = this.queryDateMain.bind(this);
@@ -34,10 +36,17 @@ class ListReportComponent extends Component {
     editReport(id) {
         this.props.history.push(`/update-report/${id}`);
     }
+    editPatient(id) {
+        this.props.history.push(`/update-patient/${id}`);
+    }
 
     addReport() {
         this.props.history.push('/add-report');
     }
+    addPatient() {
+        this.props.history.push('/add-patient');
+    }
+
 
     addDoctor() {
         this.props.history.push('/add-doctor')
@@ -45,6 +54,9 @@ class ListReportComponent extends Component {
 
     getDoctors() {
         this.props.history.push('/doctors')
+    }
+    getPatients() {
+        this.props.history.push('/patients')
     }
 
     mainScreen() {
@@ -100,8 +112,14 @@ class ListReportComponent extends Component {
                     <button className="btn btn-primary " style={{textAlign: "center", marginLeft: "4px"}}
                             onClick={this.getDoctors}> Gets Doctor
                     </button>
+                    <button className="btn btn-primary " style={{textAlign: "center", marginLeft: "4px"}}
+                            onClick={this.getPatients}> Gets Patients
+                    </button>
                     <button className="btn btn-primary" style={{textAlign: "center", marginLeft: "4px"}}
-                            onClick={this.queryDateMain}> List By Date
+                            onClick={this.editPatient}> update Patient
+                    </button>
+                    <button className="btn btn-primary" style={{textAlign: "center", marginLeft: "4px"}}
+                            onClick={this.addPatient}> add Patient
                     </button>
 
 

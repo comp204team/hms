@@ -9,7 +9,9 @@ import UpdateReportComponent from './components/UpdateReportComponent';
 import ViewReportComponent from './components/ViewReportComplement';
 import CreateLaborantComponent from './components/CreateDoctorComponent';
 import ListDoctorComponent from './components/ListDoctorComponent';
-import QueryDateReportComponent from './components/QueryDateReportComponent';
+import CreatePatientComponent from "./components/CreatePatientComponent";
+import UpdatePatientComponent from "./components/UpdatePatientComponent";
+import ListPatientComponent from "./components/ListPatientComponent";
 function App() {
   return (
     <div>
@@ -26,10 +28,12 @@ function App() {
                           <Route path = "/reports" exact component = {ListReportComponent}></Route>
                           <Route path = "/add-report" exact component = {CreateReportComponents}></Route>
                           <Route path = "/update-report/:id" exact component = {UpdateReportComponent}></Route>
+                          <Route path = "/update-patient/:id" exact component = {UpdatePatientComponent}></Route>
                           <Route path = "/view-report/:id" component = {ViewReportComponent}></Route>
-                          <Route path = "/add-laborant" component = {CreateLaborantComponent}></Route>
-                          <Route path = "/laborants" component = {ListDoctorComponent}></Route>
-                          <Route path = "/queryDate" exact component = {QueryDateReportComponent}></Route>
+                          <Route path = "/add-doctor" component = {CreateLaborantComponent}></Route>
+                          <Route path = "/doctors" component = {ListDoctorComponent}></Route>
+                          <Route path = "/patients" component = {ListPatientComponent}></Route>
+                          <Route path = "/add-patient" exact component = {CreatePatientComponent}></Route>
 
                     </Switch>
                 </div>

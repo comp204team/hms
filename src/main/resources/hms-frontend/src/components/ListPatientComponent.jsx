@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PatientService from '../services/PatientService'
+import ReportService from "../services/ReportService";
 
 
 class ListPatientComponent extends Component {
@@ -11,7 +12,19 @@ class ListPatientComponent extends Component {
         }
     }
 
+    deletePatient(id) {
+        PatientService.deletePatient(id).then(res => {
+            this.setState({patients: this.state.patients.filter(report => report.id !== id)});
+        });
+    }
 
+    viewPatient(id) {
+        this.props.history.push(`/view-patient/${id}`);
+    }
+
+    editPatient(id) {
+        this.props.history.push(`/update-patient/${id}`);
+    }
     componentDidMount() {
         PatientService.getAllPatients().then((res) => {
             this.setState({patients: res.data});
@@ -57,6 +70,20 @@ class ListPatientComponent extends Component {
                                         <td>  {patient.email}</td>
                                         <td>  {patient.roomId}</td>
                                         <td>  {patient.doctorId}</td>
+                                        <td>
+                                            <button style={{marginLeft: "5px"}}
+                                                    onClick={() => this.editPatient(patient.id)}
+                                                    className="btn btn-info">Update
+                                            </button>
+                                            <button style={{marginLeft: "5px"}}
+                                                    onClick={() => this.deletePatient(patient.id)}
+                                                    className="btn btn-danger">Delete
+                                            </button>
+                                            <button style={{marginLeft: "5px"}}
+                                                    onClick={() => this.viewPatient(patient.id)}
+                                                    className="btn btn-info">View
+                                            </button>
+                                        </td>
                                     </tr>
                             )
                         }

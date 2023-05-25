@@ -24,7 +24,8 @@ class CreateDoctorComponent extends Component {
         let doctor = {
             name: this.state.name, 
             surname: this.state.surname, 
-            departmentId: this.state.departmentId};
+            departmentId: parseInt(this.state.departmentId)
+        };
             console.log('doctor => ' + JSON.stringify(doctor));
             DoctorService.createDoctor(doctor).then(res =>{
                 this.props.history.push('');
@@ -74,8 +75,8 @@ class CreateDoctorComponent extends Component {
                                                 value={this.state.surname} onChange={this.changeSurnameHandler}/>
                                         </div>
                                         <div className = "form-group">
-                                            <label> Hospital No: </label>
-                                            <input placeholder="Hospital No:" name="emailId" className="form-control" 
+                                            <label> Department Id </label>
+                                            <input placeholder="DepartmentId" name="emailId" className="form-control"
                                                 value={this.state.departmentId} onChange={this.changeDepartmentIdHandler}/>
                                         </div>
                                         <button className="btn btn-success" onClick={this.saveDoctor} style={{marginLeft: "10px"}} >Save</button>
