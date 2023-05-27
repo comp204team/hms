@@ -2,10 +2,7 @@ package com.comp204.comp204hms.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 
 @Entity
 @Table(name = "patients")
@@ -23,7 +21,7 @@ public class Patient {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "tckn")
+    @Column(name = "tckn", unique = true)
     private String tckn;
 
     @Column(name = "name")

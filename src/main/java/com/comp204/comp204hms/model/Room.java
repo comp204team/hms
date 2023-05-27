@@ -1,16 +1,14 @@
 package com.comp204.comp204hms.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 
 @Entity
 @Table(name = "rooms")
@@ -21,7 +19,7 @@ public class Room {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "room_number")
+    @Column(name = "room_number", unique = true)
     private String roomNumber;
 
     @OneToOne(mappedBy = "room")
