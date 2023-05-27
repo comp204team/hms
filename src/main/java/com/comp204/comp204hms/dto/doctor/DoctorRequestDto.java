@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class DoctorRequestDto {
-    private Long tckn;
+    private String tckn;
 
     private String name;
 

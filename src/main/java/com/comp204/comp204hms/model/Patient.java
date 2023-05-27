@@ -23,6 +23,9 @@ public class Patient {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "tckn")
+    private String tckn;
+
     @Column(name = "name")
     private String name;
 

@@ -29,7 +29,11 @@ public class ReportController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ReportDto>> getAll(@RequestParam Optional<Long> patientId, @RequestParam Optional<Long> doctorId){
+    public ResponseEntity<List<ReportDto>> getAll(@RequestParam Optional<Long> patientId, @RequestParam Optional<Long> doctorId,
+    @RequestParam Optional<String> patientTckn){
+        if(patientTckn.isPresent()){
+            return new ResponseEntity<>(reportService.getByPatientTckn(patientTckn.get()), HttpStatus.OK);
+        }
         if(patientId.isPresent()){
             return new ResponseEntity<>(reportService.getByPatientId(patientId.get()), HttpStatus.OK);
         }

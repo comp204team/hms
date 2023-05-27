@@ -48,9 +48,6 @@ public class DoctorService {
     public DoctorDto update(Long id, DoctorRequestDto doctorRequestDto){
         Doctor doctor = getDoctorByIdOrThrowNotFoundError(id);
 
-        if(doctorRequestDto.getTckn() != null){
-            doctor.setTckn(doctorRequestDto.getTckn());
-        }
         if(doctorRequestDto.getName() != null){
             doctor.setName(doctorRequestDto.getName());
         }

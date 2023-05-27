@@ -52,6 +52,10 @@ public class ReportService {
         return reportRepository.findAllByDoctor_Id(doctorId).stream().map(ReportMapper.INSTANCE::toDto).collect(Collectors.toList());
     }
 
+    public List<ReportDto> getByPatientTckn(String tckn){
+        return reportRepository.findAllByPatient_Tckn(tckn).stream().map(ReportMapper.INSTANCE::toDto).collect(Collectors.toList());
+    }
+
     public ReportDto getById(Long id){
         return ReportMapper.INSTANCE.toDto(getByIdOrThrowNotFoundError(id));
     }

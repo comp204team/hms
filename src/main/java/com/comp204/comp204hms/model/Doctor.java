@@ -23,7 +23,7 @@ public class Doctor {
     private Long id;
 
     @Column(name = "tckn")
-    private Long tckn;
+    private String tckn;
 
     @Column(name = "name")
     private String name;

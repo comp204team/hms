@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PatientRequestDto {
 
+    private String tckn;
     private String name;
     private String surname;
     private String address;

@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PatientDto {
     private Long id;
+
+    private String tckn;
     private String name;
     private String surname;
     private String address;

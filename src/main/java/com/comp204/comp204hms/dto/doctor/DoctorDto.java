@@ -13,7 +13,7 @@ public class DoctorDto {
 
     private Long id;
 
-    private Long tckn;
+    private String tckn;
 
     private String name;
 
