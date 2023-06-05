@@ -28,6 +28,8 @@ public class DataInitial implements CommandLineRunner {
     @Autowired
     private RoomRepository roomRepository;
 
+    @Autowired
+    private NurseRepository nurseRepository;
 
 
     @Override
@@ -37,6 +39,7 @@ public class DataInitial implements CommandLineRunner {
         Optional<Doctor> dbDoctor = doctorRepository.findById(1L);
         Optional<Patient> dbPatient = patientRepository.findById(1L);
         Optional<Report> dbReport = reportRepository.findById(1L);
+        Optional<Nurse> dbNurse = nurseRepository.findById(1L);
 
         if(!dbDept.isPresent()){
             Department department = Department.builder()
@@ -85,6 +88,16 @@ public class DataInitial implements CommandLineRunner {
                     .doctor(doctorRepository.findById(1L).orElse(null))
                     .build();
             reportRepository.save(report);
+        }
+
+        if(!dbNurse.isPresent()){
+            Nurse nurse = Nurse.builder()
+                    .id(1L)
+                    .tckn("2313")
+                    .name("Hemşire")
+                    .surname("Melih")
+                    .build();
+            nurseRepository.save(nurse);
         }
 
 

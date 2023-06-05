@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class RoomRequestDto {
 
     private String roomNumber;
+
+    private Long nurseId;
 }

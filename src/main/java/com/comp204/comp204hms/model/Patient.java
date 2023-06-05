@@ -46,7 +46,7 @@ public class Patient {
     @OneToMany(mappedBy = "patient")
     private List<Report> reports;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "room_id", referencedColumnName = "id")
     private Room room;
 }

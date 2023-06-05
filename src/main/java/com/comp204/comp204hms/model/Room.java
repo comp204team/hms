@@ -3,6 +3,8 @@ package com.comp204.comp204hms.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,8 +24,12 @@ public class Room {
     @Column(name = "room_number", unique = true)
     private String roomNumber;
 
-    @OneToOne(mappedBy = "room")
-    private Patient patient;
+    @OneToMany(mappedBy = "room")
+    private List<Patient> patients;
+
+    @ManyToOne
+    @JoinColumn(name = "nurse_id", referencedColumnName = "id")
+    private Nurse nurse;
 
     //TODO: roomtype maybe
 }
